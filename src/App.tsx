@@ -1,14 +1,18 @@
 import { createHashRouter, RouterProvider } from "react-router-dom";
 import routes from "./router";
+import AppHeader from "@/components/app-header";
+import AppFooter from "./components/app-footer";
 const router = createHashRouter(routes);
 const App = () => {
   return (
     <div className="app">
-      <div className="app-header">header</div>
+      <AppHeader/>
+
       <div className="app-pages">
         <RouterProvider router={router} />
       </div>
-      <div className="app-footer">footer</div>
+      
+      <AppFooter/>
     </div>
   );
 };
