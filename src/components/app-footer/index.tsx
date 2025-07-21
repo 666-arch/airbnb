@@ -1,11 +1,11 @@
 import React, { memo } from 'react'
 
-const FooterWrapper = memo(() => {
+const AppFooter = memo(() => {
   return (
     <div>
-      
+      AppFooter
     </div>
   )
 })
 
-export default FooterWrapper
+export default AppFooter

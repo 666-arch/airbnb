@@ -1,15 +1,16 @@
 import { memo } from "react";
+import HeaderLeft from "./c-cnps/header-left";
+import HeaderCenter from "./c-cnps/header-center";
+import HeaderRight from "./c-cnps/header-right";
 
-const HeaderWrapper = memo(() => {
+const AppHeader = memo(() => {
   return (
-    <>
-    <div className="flex">
-      <div>1</div>
-      <div>2</div>
-      <div>3</div>
+    <div className="flex flex-items-center h-80px border-b-1 border-b-solid border-b-red">
+      <HeaderLeft />
+      <HeaderCenter />
+      <HeaderRight />
     </div>
-    </>
   );
 });
 
-export default HeaderWrapper;
+export default AppHeader;

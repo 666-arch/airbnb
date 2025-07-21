@@ -7,4 +7,3 @@ declare interface ResponseMessage {
     code: number | string;
     msg: string;
 }
-declare module 'postcss-import';
