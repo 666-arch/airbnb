@@ -1,11 +1,15 @@
-import React, { memo } from 'react'
+import { memo } from "react";
 
-const AppHeader = memo(() => {
+const HeaderWrapper = memo(() => {
   return (
-    <div>
-      
+    <>
+    <div className="flex">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
     </div>
-  )
-})
+    </>
+  );
+});
 
-export default AppHeader
+export default HeaderWrapper;

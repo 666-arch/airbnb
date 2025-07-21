@@ -1,6 +1,6 @@
 import React, { memo } from 'react'
 
-const AppFooter = memo(() => {
+const FooterWrapper = memo(() => {
   return (
     <div>
       
@@ -8,4 +8,4 @@ const AppFooter = memo(() => {
   )
 })
 
-export default AppFooter
+export default FooterWrapper
