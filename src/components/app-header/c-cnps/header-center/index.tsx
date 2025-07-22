@@ -3,7 +3,7 @@ import React, { memo } from 'react'
 const HeaderCenter = memo(function index(props) {
   return (
     <div>
-      HeaderCenter
+      HeaderCenterDDDDDDDDD
     </div>
   )
 })

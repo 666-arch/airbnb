@@ -1,11 +1,7 @@
-import React, { memo } from 'react'
+import React, { memo } from "react";
 
 const HeaderRight = memo(function index(props) {
-  return (
-    <div>
-      HeaderRight
-    </div>
-  )
-})
+  return <div className="flex flex-1 justify-end">HeaderRight</div>;
+});
 
-export default HeaderRight
+export default HeaderRight;
