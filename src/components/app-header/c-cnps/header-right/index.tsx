@@ -14,7 +14,7 @@ const HeaderRight = memo(() => {
         </span>
       </div>
 
-      <div className="flex items-center gap-15px border-rd-22px border-1 border-solid border-#ccc p-5px mr-24px cursor-pointer bg-#FFF">
+      <div className="head-profile flex items-center gap-15px border-rd-22px border-1 border-solid border-#ccc p-5px mr-24px cursor-pointer bg-#FFF">
         <IconMenu />
         <IconProfile />
       </div>
