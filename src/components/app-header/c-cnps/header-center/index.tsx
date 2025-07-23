@@ -2,8 +2,11 @@ import React, { memo } from 'react'
 
 const HeaderCenter = memo(function index(props) {
   return (
-    <div>
-      HeaderCenterDDDDDDDDD
+    <div className='flex'>
+        <div>
+            
+        </div>
+        <div></div>
     </div>
   )
 })
