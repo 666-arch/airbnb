@@ -1,11 +1,11 @@
 import { ForwardedRef, forwardRef, memo } from "react";
 
 const HeaderModal = memo(
-  forwardRef((props, ref: ForwardedRef<HTMLDivElement>) => {
+  forwardRef(({}, ref: ForwardedRef<HTMLDivElement>) => {
     return (
       <div
         ref={ref}
-        className="pos-absolute right-24px top-90px w-160px h-200px flex flex-col justify-around bg-#FFF border-rd-10px pl-10px font-size-14px color-#000"
+        className="pos-absolute shadow-[0_0_15px_#cccccc] right-24px top-90px w-160px h-200px flex flex-col justify-around bg-#FFF border-rd-10px pl-10px font-size-14px color-#000"
       >
         <div className="flex flex-col gap-15px">
           <div className="pointer-box">注册</div>

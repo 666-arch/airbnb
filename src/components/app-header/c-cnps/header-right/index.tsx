@@ -1,7 +1,7 @@
 import IconGlobal from "@/assets/svg/icon_global";
 import IconMenu from "@/assets/svg/icon_menu";
 import IconProfile from "@/assets/svg/icon_profile";
-import { memo, useEffect, useRef, useState } from "react";
+import { memo, useRef, useState } from "react";
 import HeaderModal from "../header-modal";
 import { createPortal } from "react-dom";
 import { useClickAway } from "ahooks";
