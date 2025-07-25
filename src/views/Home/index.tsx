@@ -13,8 +13,11 @@ const Home = memo(() => {
   //     });
   // }, []);
   return (
-    <div className="home-page-wrapper">
+    <div className="home-page-wrapper flex flex-col flex-items-center">
       <HomeBanner/>
+      <div className="w-1032px">
+        aaaaa
+      </div>
     </div>
   );
 });
