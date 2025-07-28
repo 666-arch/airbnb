@@ -9,11 +9,11 @@ const Home = memo(() => {
 
   const { goodPriceInfo } = useSelector(
     (state) => ({
-      goodPriceInfo: state.home.goodProiceInfo,
+      goodPriceInfo: state.home.goodPriceInfo,
     }),
     shallowEqual
   );
-
+  console.log('goodPriceInfo',goodPriceInfo)
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchHomeDataAction() as unknown as Action);
@@ -23,9 +23,9 @@ const Home = memo(() => {
     <div className="home-page-wrapper flex flex-col flex-items-center">
       <HomeBanner />
       <div className="w-1032px">
-        <h2>{goodPriceInfo?.title}</h2>
+        <h2>{goodPriceInfo.title}</h2>
       </div>
     </div>
-  );
+  ); 
 });
 export default Home;

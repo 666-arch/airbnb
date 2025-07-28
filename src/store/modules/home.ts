@@ -1,11 +1,11 @@
 //@reduxjs/rtk
 import { getHomeGoodPriceData } from "@/services/modules/home";
-import { createSlice, createAsyncThunk, isFulfilled } from "@reduxjs/toolkit";
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 interface HomeState {
-    goodpriceInfo: any[]; // 替换为实际数据类型
+    goodPriceInfo: any[]; // 替换为实际数据类型
 }
 const initialState: HomeState = {
-    goodpriceInfo: [],
+    goodPriceInfo: [],
 };
 export const fetchHomeDataAction = createAsyncThunk("fetchData", async () => {
     const response = await getHomeGoodPriceData()
@@ -17,12 +17,12 @@ const homeSlice =
         initialState,
         reducers: {
             changeGoodPriceInfoAction(state, { payload }) {
-                state.goodpriceInfo = payload
+                state.goodPriceInfo = payload
             }
         },
         extraReducers: (builder) => {
             builder.addCase(fetchHomeDataAction.fulfilled, (state, { payload }) => {
-                state.goodpriceInfo = payload
+                state.goodPriceInfo = payload
             })
         }
     })
