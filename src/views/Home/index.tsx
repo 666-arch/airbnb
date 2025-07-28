@@ -22,6 +22,7 @@ const Home = memo(() => {
       <HomeBanner />
       <div className="w-1032px">
         <SectionHeader title={goodPriceInfo.title}/>
+
       </div>
     </div>
   );
