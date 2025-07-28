@@ -9,7 +9,7 @@ class httpRequest {
             timeout
         })
         this.instance.interceptors.response.use((res) => {
-            return res.data;
+            return res;
         }, err => {
             return Promise.reject(err)
         })
