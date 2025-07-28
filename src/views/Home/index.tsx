@@ -4,16 +4,15 @@ import HomeBanner from "./c-cnps/home-banner";
 import { shallowEqual, useDispatch, useSelector } from "react-redux";
 import { fetchHomeDataAction } from "@/store/modules/home";
 import { Action } from "@reduxjs/toolkit";
+import SectionHeader from '@/components/section-header/index';
 
 const Home = memo(() => {
-
   const { goodPriceInfo } = useSelector(
-    (state) => ({
+    (state: { home: { goodPriceInfo: IGoodPriceInfoList } }) => ({
       goodPriceInfo: state.home.goodPriceInfo,
     }),
     shallowEqual
   );
-  console.log('goodPriceInfo',goodPriceInfo)
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchHomeDataAction() as unknown as Action);
@@ -23,9 +22,9 @@ const Home = memo(() => {
     <div className="home-page-wrapper flex flex-col flex-items-center">
       <HomeBanner />
       <div className="w-1032px">
-        <h2>{goodPriceInfo.title}</h2>
+        <SectionHeader title={goodPriceInfo.title}/>
       </div>
     </div>
-  ); 
+  );
 });
 export default Home;

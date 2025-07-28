@@ -2,10 +2,13 @@
 import { getHomeGoodPriceData } from "@/services/modules/home";
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 interface HomeState {
-    goodPriceInfo: any[]; // 替换为实际数据类型
+    goodPriceInfo: IGoodPriceInfoList; // 替换为实际数据类型
 }
 const initialState: HomeState = {
-    goodPriceInfo: [],
+    goodPriceInfo: {
+        title: "",
+        list: []
+    },
 };
 export const fetchHomeDataAction = createAsyncThunk("fetchData", async () => {
     const response = await getHomeGoodPriceData()
