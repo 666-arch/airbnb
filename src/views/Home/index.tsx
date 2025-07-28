@@ -1,4 +1,3 @@
-// import apiRequest from "@/services";
 import React, { memo, useEffect } from "react";
 import HomeBanner from "./c-cnps/home-banner";
 import { shallowEqual, useDispatch, useSelector } from "react-redux";
