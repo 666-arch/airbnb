@@ -12,7 +12,8 @@ const initialState: HomeState = {
 };
 export const fetchHomeDataAction = createAsyncThunk("fetchData", async () => {
     const response = await getHomeGoodPriceData()
-    return response.data;
+    const dataSource = response.data as IGoodPriceInfoList
+    return dataSource;
 })
 const homeSlice =
     createSlice({

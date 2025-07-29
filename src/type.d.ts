@@ -7,12 +7,12 @@ declare interface ResponseMessage {
     code: number | string;
     msg: string;
 }
-type GoodPriceChildInfo = {
+declare type GoodPriceChildInfo = {
     name: string;
-    picture_url: string;
-    price: number;
-    price_format: string;
-    reviews_count: number;
+    picture_url?: string;
+    price?: number;
+    price_format?: string;
+    reviews_count?: number;
 }
 declare interface IGoodPriceInfoList {
     title: string;

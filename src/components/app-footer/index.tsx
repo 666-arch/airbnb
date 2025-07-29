@@ -3,7 +3,7 @@ import footerData from "@/assets/data/footer.json";
 
 const AppFooter = memo(() => {
   return (
-    <div className="app-footer w-100% flex flex-col items-center gap-50px">
+    <div className="app-footer w-100% flex flex-col items-center gap-50px mt-36px">
       <div className="w-1023px flex justify-between">
         {footerData.map((item) => {
           return (

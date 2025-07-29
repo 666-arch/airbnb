@@ -3,7 +3,8 @@ import HomeBanner from "./c-cnps/home-banner";
 import { shallowEqual, useDispatch, useSelector } from "react-redux";
 import { fetchHomeDataAction } from "@/store/modules/home";
 import { Action } from "@reduxjs/toolkit";
-import SectionHeader from '@/components/section-header/index';
+import SectionHeader from "@/components/section-header/index";
+import RoomItem from "@/components/room-item";
 
 const Home = memo(() => {
   const { goodPriceInfo } = useSelector(
@@ -12,6 +13,7 @@ const Home = memo(() => {
     }),
     shallowEqual
   );
+  const _data: IGoodPriceInfoList = goodPriceInfo;
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchHomeDataAction() as unknown as Action);
@@ -21,8 +23,12 @@ const Home = memo(() => {
     <div className="home-page-wrapper flex flex-col flex-items-center">
       <HomeBanner />
       <div className="w-1032px">
-        <SectionHeader title={goodPriceInfo.title}/>
-
+        <SectionHeader title={_data?.title} />
+        <div className="flex flex-wrap">
+          {_data.list?.slice(0, 8).map((item) => (
+            <RoomItem key={item.name} name={item.name} />
+          ))}
+        </div>
       </div>
     </div>
   );
