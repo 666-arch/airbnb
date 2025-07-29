@@ -13,6 +13,10 @@ declare type GoodPriceChildInfo = {
     price?: number;
     price_format?: string;
     reviews_count?: number;
+    verify_info?: {
+        messages: Array<string>
+        text_color?: string;
+    }
 }
 declare interface IGoodPriceInfoList {
     title: string;
