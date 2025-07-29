@@ -24,7 +24,7 @@ const Home = memo(() => {
       <HomeBanner />
       <div className="w-1032px">
         <SectionHeader title={_data?.title} />
-        <div className="flex flex-wrap">
+        <div className="flex flex-wrap mr--8px ml--8px">
           {_data.list?.slice(0, 8).map((item) => (
             <RoomItem key={item.name} name={item.name} />
           ))}
