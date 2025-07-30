@@ -5,6 +5,7 @@ import { fetchHomeDataAction } from "@/store/modules/home";
 import { Action } from "@reduxjs/toolkit";
 import SectionHeader from "@/components/section-header/index";
 import RoomItem from "@/components/room-item";
+import SectionRooms from "@/components/section-rooms";
 const Home = memo(() => {
   const { goodPriceInfo } = useSelector(
     (state: { home: { goodPriceInfo: IGoodPriceInfoList } }) => ({
@@ -22,18 +23,7 @@ const Home = memo(() => {
       <HomeBanner />
       <div className="w-1032px">
         <SectionHeader title={_data?.title} />
-        <div className="flex flex-wrap mr--8px ml--8px">
-          {_data.list?.slice(0, 8).map((item) => (
-            <RoomItem
-              key={item.name}
-              name={item.name}
-              picture_url={item.picture_url}
-              verify_info={item.verify_info}
-              price_format={item.price_format}
-              star_rating={item.star_rating}
-            />
-          ))}
-        </div>
+        <SectionRooms _data={_data}/>
       </div>
     </div>
   );

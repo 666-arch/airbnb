@@ -26,7 +26,7 @@ const RoomItem: React.FC<IProps> = memo(
           <div className="font-size-12px font-600 mt-8px mb-8px">
             {price_format}/晚
           </div>
-          <Rate allowHalf defaultValue={star_rating ?? 0}/>
+          <Rate allowHalf defaultValue={star_rating ?? 0} />
         </div>
       </div>
     );
