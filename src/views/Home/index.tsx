@@ -5,7 +5,6 @@ import { fetchHomeDataAction } from "@/store/modules/home";
 import { Action } from "@reduxjs/toolkit";
 import SectionHeader from "@/components/section-header/index";
 import RoomItem from "@/components/room-item";
-
 const Home = memo(() => {
   const { goodPriceInfo } = useSelector(
     (state: { home: { goodPriceInfo: IGoodPriceInfoList } }) => ({
