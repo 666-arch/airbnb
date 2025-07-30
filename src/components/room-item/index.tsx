@@ -4,7 +4,7 @@ interface IProps extends GoodPriceChildInfo {
   width?: React.CSSProperties["width"];
 }
 const RoomItem: React.FC<IProps> = memo(
-  ({ width, name, picture_url, verify_info, price_format }) => {
+  ({ width, name, picture_url, verify_info, price_format, star_rating }) => {
     return (
       <div className="p-8px" style={{ width: width ?? "25%" }}>
         <div className="inner flex flex-col cursor-pointer">
@@ -26,7 +26,7 @@ const RoomItem: React.FC<IProps> = memo(
           <div className="font-size-12px font-600 mt-8px mb-8px">
             {price_format}/晚
           </div>
-          <Rate allowHalf defaultValue={2.5} />
+          <Rate allowHalf defaultValue={star_rating ?? 0}/>
         </div>
       </div>
     );

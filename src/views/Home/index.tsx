@@ -30,7 +30,7 @@ const Home = memo(() => {
               picture_url={item.picture_url}
               verify_info={item.verify_info}
               price_format={item.price_format}
-              
+              star_rating={item.star_rating}
             />
           ))}
         </div>

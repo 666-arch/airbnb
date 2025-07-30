@@ -13,6 +13,7 @@ declare type GoodPriceChildInfo = {
     price?: number;
     price_format?: string;
     reviews_count?: number;
+    star_rating?: number;
     verify_info?: {
         messages: Array<string>
         text_color?: string;
