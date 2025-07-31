@@ -4,7 +4,6 @@ import { shallowEqual, useDispatch, useSelector } from "react-redux";
 import { fetchHomeDataAction } from "@/store/modules/home";
 import { Action } from "@reduxjs/toolkit";
 import SectionHeader from "@/components/section-header/index";
-import RoomItem from "@/components/room-item";
 import SectionRooms from "@/components/section-rooms";
 const Home = memo(() => {
   const { goodPriceInfo } = useSelector(

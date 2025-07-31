@@ -21,5 +21,14 @@ declare type GoodPriceChildInfo = {
 }
 declare interface IGoodPriceInfoList {
     title: string;
+    subtitle?: string;
     list: Array<GoodPriceChildInfo>
+}
+declare type GoodHighScoreChildInfo = {
+    name: string;
+}
+declare interface IGoodHighScoreList {
+    title: string;
+    subtitle?: string;
+    list: Array<GoodHighScoreChildInfo>
 }
