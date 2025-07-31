@@ -3,14 +3,14 @@ import { getHomeGoodHighScoreData, getHomeGoodPriceData } from "@/services/modul
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 interface HomeState {
     goodPriceInfo: IGoodPriceInfoList;
-    goodScoreInfo: IGoodHighScoreList
+    goodHighScoreInfo: IGoodHighScoreList
 }
 const initialState: HomeState = {
     goodPriceInfo: {
         title: "",
         list: []
     },
-    goodScoreInfo: {
+    goodHighScoreInfo: {
         title: "",
         list: []
     }
@@ -23,10 +23,10 @@ const initialState: HomeState = {
 
 export const fetchHomeDataAction = createAsyncThunk('fetchData', (payload, { dispatch }) => {
     getHomeGoodPriceData().then(res => {
-        dispatch(changeGoodPriceInfoAction(res))
+        res.status === 200 && dispatch(changeGoodPriceInfoAction(res.data))
     })
     getHomeGoodHighScoreData().then(res => {
-        dispatch(changeGoodHighScoreAction(res))
+        res.status === 200 && dispatch(changeGoodHighScoreAction(res.data))
     })
 })
 
@@ -39,7 +39,7 @@ const homeSlice =
                 state.goodPriceInfo = payload
             },
             changeGoodHighScoreAction(state, { payload }) {
-                state
+                state.goodHighScoreInfo = payload
             }
         },
         // extraReducers: (builder) => {

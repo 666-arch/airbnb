@@ -6,13 +6,21 @@ import { Action } from "@reduxjs/toolkit";
 import SectionHeader from "@/components/section-header/index";
 import SectionRooms from "@/components/section-rooms";
 const Home = memo(() => {
-  const { goodPriceInfo } = useSelector(
-    (state: { home: { goodPriceInfo: IGoodPriceInfoList } }) => ({
+  const { goodPriceInfo, goodHighScoreInfo } = useSelector(
+    (state: {
+      home: {
+        goodPriceInfo: IGoodPriceInfoList;
+        goodHighScoreInfo: IGoodHighScoreList;
+      };
+    }) => ({
       goodPriceInfo: state.home.goodPriceInfo,
+      goodHighScoreInfo: state.home.goodHighScoreInfo,
     }),
     shallowEqual
   );
-  const _data: IGoodPriceInfoList = goodPriceInfo;
+  const _goodPriceInfo: IGoodPriceInfoList = goodPriceInfo;
+  const _goodHighScoreInfo: IGoodHighScoreList = goodHighScoreInfo;
+  console.log("_goodHighScoreInfo", _goodHighScoreInfo);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchHomeDataAction() as unknown as Action);
@@ -20,9 +28,22 @@ const Home = memo(() => {
   return (
     <div className="home-page-wrapper flex flex-col flex-items-center">
       <HomeBanner />
-      <div className="w-1032px">
-        <SectionHeader title={_data?.title} />
-        <SectionRooms _data={_data}/>
+      <div className="w-1032px flex flex-col">
+        <div className="good-price-info flex flex-col">
+          <SectionHeader
+            title={_goodPriceInfo?.title}
+            subtitle={_goodPriceInfo?.subtitle}
+          />
+          <SectionRooms _goodPriceInfo={_goodPriceInfo} />
+        </div>
+
+        <div className="good-highScore-info">
+          <SectionHeader
+            title={_goodHighScoreInfo?.title}
+            subtitle={_goodHighScoreInfo?.subtitle}
+          />
+
+        </div>
       </div>
     </div>
   );
