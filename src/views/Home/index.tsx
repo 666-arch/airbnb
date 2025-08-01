@@ -34,7 +34,7 @@ const Home = memo(() => {
             title={_goodPriceInfo?.title}
             subtitle={_goodPriceInfo?.subtitle}
           />
-          <SectionRooms _goodPriceInfo={_goodPriceInfo} />
+          <SectionRooms roomList={_goodPriceInfo} />
         </div>
 
         <div className="good-highScore-info">

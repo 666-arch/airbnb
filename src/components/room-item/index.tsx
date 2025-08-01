@@ -1,6 +1,6 @@
 import React, { memo } from "react";
 import { Rate } from "antd";
-interface IProps extends GoodPriceChildInfo {
+interface IProps extends RoomListType {
   width?: React.CSSProperties["width"];
 }
 const RoomItem: React.FC<IProps> = memo(

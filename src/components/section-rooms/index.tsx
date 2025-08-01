@@ -1,12 +1,12 @@
 import React, { memo } from "react";
 import RoomItem from "../room-item";
 interface IProps {
-  _goodPriceInfo: IGoodPriceInfoList;
+  roomList: IGoodPriceInfoList;
 }
-const SectionRooms: React.FC<IProps> = memo(({ _goodPriceInfo }) => {
+const SectionRooms: React.FC<IProps> = memo(({ roomList }) => {
   return (
     <div className="flex flex-wrap mr--8px ml--8px">
-      {_goodPriceInfo.list?.slice(0, 8).map((item) => (
+      {roomList.list?.slice(0, 8).map((item) => (
         <RoomItem
           key={item.name}
           name={item.name}

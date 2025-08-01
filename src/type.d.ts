@@ -7,7 +7,7 @@ declare interface ResponseMessage {
     code: number | string;
     msg: string;
 }
-declare type GoodPriceChildInfo = {
+declare type RoomListType = {
     name: string;
     picture_url?: string;
     price?: number;
@@ -22,13 +22,10 @@ declare type GoodPriceChildInfo = {
 declare interface IGoodPriceInfoList {
     title: string;
     subtitle?: string;
-    list: Array<GoodPriceChildInfo>
-}
-declare type GoodHighScoreChildInfo = {
-    name: string;
+    list: Array<RoomListType>
 }
 declare interface IGoodHighScoreList {
     title: string;
     subtitle?: string;
-    list: Array<GoodHighScoreChildInfo>
+    list: Array<RoomListType>
 }
