@@ -9,7 +9,7 @@ const Home = memo(() => {
   const { goodPriceInfo, goodHighScoreInfo } = useSelector(
     (state: {
       home: {
-        goodPriceInfo: IGoodPriceInfoList;
+        goodPriceInfo: IHomeRoomInfoList;
         goodHighScoreInfo: IGoodHighScoreList;
       };
     }) => ({
@@ -18,7 +18,7 @@ const Home = memo(() => {
     }),
     shallowEqual
   );
-  const _goodPriceInfo: IGoodPriceInfoList = goodPriceInfo;
+  const _goodPriceInfo: IHomeRoomInfoList = goodPriceInfo;
   const _goodHighScoreInfo: IGoodHighScoreList = goodHighScoreInfo;
   const dispatch = useDispatch();
   useEffect(() => {
@@ -41,7 +41,6 @@ const Home = memo(() => {
             title={_goodHighScoreInfo?.title}
             subtitle={_goodHighScoreInfo?.subtitle}
           />
-
           <SectionRooms roomList={_goodHighScoreInfo} />
         </div>
       </div>

@@ -2,8 +2,8 @@
 import { getHomeGoodHighScoreData, getHomeGoodPriceData } from "@/services/modules/home";
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 interface HomeState {
-    goodPriceInfo: IGoodPriceInfoList;
-    goodHighScoreInfo: IGoodHighScoreList
+    goodPriceInfo: IHomeRoomInfoList;
+    goodHighScoreInfo: IHomeRoomInfoList
 }
 const initialState: HomeState = {
     goodPriceInfo: {
@@ -17,7 +17,7 @@ const initialState: HomeState = {
 };
 // export const fetchHomeDataAction = createAsyncThunk("fetchData", async () => {
 //     const response = await getHomeGoodPriceData()
-//     const dataSource = response.data as IGoodPriceInfoList
+//     const dataSource = response.data as IHomeRoomInfoList
 //     return dataSource;
 // })
 

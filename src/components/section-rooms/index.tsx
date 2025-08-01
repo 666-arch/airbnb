@@ -1,7 +1,7 @@
 import React, { memo } from "react";
 import RoomItem from "../room-item";
 interface IProps {
-  roomList: IGoodPriceInfoList;
+  roomList: IHomeRoomInfoList;
 }
 const SectionRooms: React.FC<IProps> = memo(({ roomList }) => {
   return (

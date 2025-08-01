@@ -19,12 +19,7 @@ declare type RoomListType = {
         text_color?: string;
     }
 }
-declare interface IGoodPriceInfoList {
-    title: string;
-    subtitle?: string;
-    list: Array<RoomListType>
-}
-declare interface IGoodHighScoreList {
+declare interface IHomeRoomInfoList {
     title: string;
     subtitle?: string;
     list: Array<RoomListType>
