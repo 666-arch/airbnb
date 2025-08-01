@@ -20,7 +20,6 @@ const Home = memo(() => {
   );
   const _goodPriceInfo: IGoodPriceInfoList = goodPriceInfo;
   const _goodHighScoreInfo: IGoodHighScoreList = goodHighScoreInfo;
-  console.log("_goodHighScoreInfo", _goodHighScoreInfo);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchHomeDataAction() as unknown as Action);
@@ -43,6 +42,7 @@ const Home = memo(() => {
             subtitle={_goodHighScoreInfo?.subtitle}
           />
 
+          <SectionRooms roomList={_goodHighScoreInfo} />
         </div>
       </div>
     </div>
