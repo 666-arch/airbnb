@@ -2,7 +2,7 @@ import React, { memo } from "react";
 import RoomItem from "../room-item";
 interface IProps {
   roomList: Array<RoomListType>;
-  width?: React.CSSProperties['width']
+  width?: React.CSSProperties["width"];
 }
 const SectionRooms: React.FC<IProps> = memo(({ width, roomList }) => {
   return (

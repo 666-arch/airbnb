@@ -59,6 +59,7 @@ const Home = memo(() => {
           />
           <SectionRooms roomList={_goodHighScoreInfo.list} />
         </div>
+        
       </div>
     </div>
   );
