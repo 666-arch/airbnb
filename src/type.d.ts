@@ -45,5 +45,5 @@ interface ICityAccommodations {
 declare interface IHomeDiscountInfoList {
     title: string;
     subtitle?: string;
-    dest_list: ICityAccommodations
+    dest_list: any
 }
