@@ -33,5 +33,6 @@ interface ICityAccommodations {
 declare interface IHomeDiscountInfoList {
     title: string;
     subtitle?: string;
-    dest_list: any
+    dest_list: any;
+    dest_address?: Array<{name: string}>
 }

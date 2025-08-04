@@ -5,6 +5,7 @@ import SectionRooms from "@/components/section-rooms";
 import { fetchHomeDataAction } from "@/store/modules/home";
 import SectionHeader from "@/components/section-header/index";
 import { shallowEqual, useDispatch, useSelector } from "react-redux";
+import SectionTabs from "@/components/section-tabs";
 const Home = memo(() => {
   const { goodPriceInfo, goodHighScoreInfo, goodDiscountInfo } = useSelector(
     (state: {
@@ -38,6 +39,9 @@ const Home = memo(() => {
             title={_goodDiscountInfo.title}
             subtitle={_goodDiscountInfo.subtitle}
           />
+          <SectionTabs
+            tabNames={_goodDiscountInfo?.dest_address.map((item) => item?.name)}
+          />
           <SectionRooms
             roomList={_goodDiscountInfo?.dest_list?.["佛山"]}
             width={"33%"}
@@ -59,7 +63,6 @@ const Home = memo(() => {
           />
           <SectionRooms roomList={_goodHighScoreInfo.list} />
         </div>
-        
       </div>
     </div>
   );
