@@ -1,12 +1,13 @@
 import React, { memo } from "react";
 import RoomItem from "../room-item";
 interface IProps {
-  roomList: IHomeRoomInfoList;
+  roomList: Array<RoomListType>;
+  width?: React.CSSProperties['width']
 }
-const SectionRooms: React.FC<IProps> = memo(({ roomList }) => {
+const SectionRooms: React.FC<IProps> = memo(({ width, roomList }) => {
   return (
     <div className="flex flex-wrap mr--8px ml--8px">
-      {roomList.list?.slice(0, 8).map((item) => (
+      {roomList?.slice(0, 8).map((item) => (
         <RoomItem
           key={item.name}
           name={item.name}
@@ -14,6 +15,7 @@ const SectionRooms: React.FC<IProps> = memo(({ roomList }) => {
           verify_info={item.verify_info}
           price_format={item.price_format}
           star_rating={item.star_rating}
+          width={width}
         />
       ))}
     </div>

@@ -26,22 +26,10 @@ declare interface IHomeRoomInfoList {
     list: Array<RoomListType>
 }
 
-type Accommodation = {
-    id: string;
-    picture_url: string;
-    name: string;
-    price: number;
-    price_format: string;
-    star_rating: number;
-    star_rating_color: string;
-    reviews_count: number;
-    lat: number;
-    lng: number;
-    image_url: string;
-}
 interface ICityAccommodations {
-    [city: string]: Accommodation[]
+    [city: string]: RoomListType[]
 }
+
 declare interface IHomeDiscountInfoList {
     title: string;
     subtitle?: string;
