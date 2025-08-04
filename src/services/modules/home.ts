@@ -10,3 +10,9 @@ export const getHomeGoodHighScoreData = () => {
         url: "/home/highscore"
     })
 }
+
+export const getHomeDiscountData = () => {
+    return apiRequest.get({
+        url: "/home/discount"
+    })
+}

@@ -10,7 +10,7 @@ const Home = memo(() => {
     (state: {
       home: {
         goodPriceInfo: IHomeRoomInfoList;
-        goodHighScoreInfo: IGoodHighScoreList;
+        goodHighScoreInfo: IHomeRoomInfoList;
       };
     }) => ({
       goodPriceInfo: state.home.goodPriceInfo,
@@ -19,7 +19,7 @@ const Home = memo(() => {
     shallowEqual
   );
   const _goodPriceInfo: IHomeRoomInfoList = goodPriceInfo;
-  const _goodHighScoreInfo: IGoodHighScoreList = goodHighScoreInfo;
+  const _goodHighScoreInfo: IHomeRoomInfoList = goodHighScoreInfo;
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchHomeDataAction() as unknown as Action);
@@ -28,6 +28,7 @@ const Home = memo(() => {
     <div className="home-page-wrapper flex flex-col flex-items-center">
       <HomeBanner />
       <div className="w-1032px flex flex-col">
+        
         <div className="good-price-info flex flex-col">
           <SectionHeader
             title={_goodPriceInfo?.title}
@@ -35,7 +36,6 @@ const Home = memo(() => {
           />
           <SectionRooms roomList={_goodPriceInfo} />
         </div>
-
         <div className="good-highScore-info">
           <SectionHeader
             title={_goodHighScoreInfo?.title}
@@ -43,6 +43,7 @@ const Home = memo(() => {
           />
           <SectionRooms roomList={_goodHighScoreInfo} />
         </div>
+
       </div>
     </div>
   );

@@ -1,9 +1,10 @@
 //@reduxjs/rtk
-import { getHomeGoodHighScoreData, getHomeGoodPriceData } from "@/services/modules/home";
+import { getHomeDiscountData, getHomeGoodHighScoreData, getHomeGoodPriceData } from "@/services/modules/home";
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 interface HomeState {
     goodPriceInfo: IHomeRoomInfoList;
-    goodHighScoreInfo: IHomeRoomInfoList
+    goodHighScoreInfo: IHomeRoomInfoList;
+    goodDiscountInfo: IHomeDiscountInfoList;
 }
 const initialState: HomeState = {
     goodPriceInfo: {
@@ -13,6 +14,24 @@ const initialState: HomeState = {
     goodHighScoreInfo: {
         title: "",
         list: []
+    },
+    goodDiscountInfo: {
+        title: "",
+        dest_list: {
+            "": [{
+                id: "",
+                picture_url: "",
+                name: "",
+                price: 0,
+                price_format: "",
+                star_rating: 0,
+                star_rating_color: "",
+                reviews_count: 0,
+                lat: 0,
+                lng: 0,
+                image_url: ""
+            }]
+        }
     }
 };
 // export const fetchHomeDataAction = createAsyncThunk("fetchData", async () => {
@@ -28,6 +47,9 @@ export const fetchHomeDataAction = createAsyncThunk('fetchData', (payload, { dis
     getHomeGoodHighScoreData().then(res => {
         res.status === 200 && dispatch(changeGoodHighScoreAction(res.data))
     })
+    getHomeDiscountData().then(res => {
+        res.status === 200 && dispatch(changeGoodDiscountAction(res.data))
+    })
 })
 
 const homeSlice =
@@ -40,6 +62,9 @@ const homeSlice =
             },
             changeGoodHighScoreAction(state, { payload }) {
                 state.goodHighScoreInfo = payload
+            },
+            changeGoodDiscountAction(state, { payload }) {
+                state.goodDiscountInfo = payload
             }
         },
         // extraReducers: (builder) => {
@@ -49,6 +74,6 @@ const homeSlice =
         // }
     })
 
-export const { changeGoodPriceInfoAction, changeGoodHighScoreAction } = homeSlice.actions
+export const { changeGoodPriceInfoAction, changeGoodHighScoreAction, changeGoodDiscountAction } = homeSlice.actions
 
 export default homeSlice.reducer
