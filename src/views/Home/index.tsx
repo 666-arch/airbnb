@@ -7,7 +7,7 @@ import SectionHeader from "@/components/section-header/index";
 import { shallowEqual, useDispatch, useSelector } from "react-redux";
 import SectionTabs from "@/components/section-tabs";
 const Home = memo(() => {
-  const { goodPriceInfo, goodHighScoreInfo, goodDiscountInfo } = useSelector(
+    const { goodPriceInfo, goodHighScoreInfo, goodDiscountInfo } = useSelector(
     (state: {
       home: {
         goodPriceInfo: IHomeRoomInfoList;
@@ -21,14 +21,16 @@ const Home = memo(() => {
     }),
     shallowEqual
   );
+
   const _goodPriceInfo: IHomeRoomInfoList = goodPriceInfo;
   const _goodHighScoreInfo: IHomeRoomInfoList = goodHighScoreInfo;
   const _goodDiscountInfo: IHomeDiscountInfoList = goodDiscountInfo;
-
   const dispatch = useDispatch();
+
   useEffect(() => {
     dispatch(fetchHomeDataAction() as unknown as Action);
   }, [dispatch]);
+
   return (
     <div className="home-page-wrapper flex flex-col flex-items-center">
       <HomeBanner />
@@ -39,7 +41,7 @@ const Home = memo(() => {
             subtitle={_goodDiscountInfo.subtitle}
           />
          <SectionTabs
-            tabNames={_goodDiscountInfo?.dest_address?.map((item) => item?.name)}
+            tabNames={_goodDiscountInfo.dest_address?.map((item) => item?.name)}
           />
           <SectionRooms
             roomList={_goodDiscountInfo?.dest_list?.["佛山"]}
