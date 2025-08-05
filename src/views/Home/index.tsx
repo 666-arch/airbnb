@@ -25,7 +25,6 @@ const Home = memo(() => {
   const _goodHighScoreInfo: IHomeRoomInfoList = goodHighScoreInfo;
   const _goodDiscountInfo: IHomeDiscountInfoList = goodDiscountInfo;
 
-  console.log(_goodDiscountInfo.dest_list?.["佛山"]);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchHomeDataAction() as unknown as Action);
@@ -39,8 +38,8 @@ const Home = memo(() => {
             title={_goodDiscountInfo.title}
             subtitle={_goodDiscountInfo.subtitle}
           />
-          <SectionTabs
-            tabNames={_goodDiscountInfo?.dest_address.map((item) => item?.name)}
+         <SectionTabs
+            tabNames={_goodDiscountInfo?.dest_address?.map((item) => item?.name)}
           />
           <SectionRooms
             roomList={_goodDiscountInfo?.dest_list?.["佛山"]}

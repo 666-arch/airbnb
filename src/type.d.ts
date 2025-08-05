@@ -34,5 +34,5 @@ declare interface IHomeDiscountInfoList {
     title: string;
     subtitle?: string;
     dest_list: any;
-    dest_address?: Array<{name: string}>
+    dest_address: Array<{name: string}>
 }
