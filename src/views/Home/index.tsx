@@ -1,4 +1,4 @@
-import { memo, useEffect } from "react";
+import { memo, useCallback, useEffect, useState } from "react";
 import { Action } from "@reduxjs/toolkit";
 import HomeBanner from "./c-cnps/home-banner";
 import SectionRooms from "@/components/section-rooms";
@@ -7,7 +7,7 @@ import SectionHeader from "@/components/section-header/index";
 import { shallowEqual, useDispatch, useSelector } from "react-redux";
 import SectionTabs from "@/components/section-tabs";
 const Home = memo(() => {
-    const { goodPriceInfo, goodHighScoreInfo, goodDiscountInfo } = useSelector(
+  const { goodPriceInfo, goodHighScoreInfo, goodDiscountInfo } = useSelector(
     (state: {
       home: {
         goodPriceInfo: IHomeRoomInfoList;
@@ -31,6 +31,14 @@ const Home = memo(() => {
     dispatch(fetchHomeDataAction() as unknown as Action);
   }, [dispatch]);
 
+  const _tabNames = _goodDiscountInfo.dest_address?.map((item) => item?.name)
+  const [tabName, setTabName] = useState<string>('佛山')
+  const handleTabClick = 
+  useCallback((index: number, name: string) => {
+    console.log(index, name);
+    setTabName(name)
+  }, []);
+
   return (
     <div className="home-page-wrapper flex flex-col flex-items-center">
       <HomeBanner />
@@ -40,11 +48,12 @@ const Home = memo(() => {
             title={_goodDiscountInfo.title}
             subtitle={_goodDiscountInfo.subtitle}
           />
-         <SectionTabs
-            tabNames={_goodDiscountInfo.dest_address?.map((item) => item?.name)}
+          <SectionTabs
+            tabNames={_tabNames}
+            tabClick={handleTabClick}
           />
           <SectionRooms
-            roomList={_goodDiscountInfo?.dest_list?.["佛山"]}
+            roomList={_goodDiscountInfo?.dest_list?.[tabName]}
             width={"33%"}
           />
         </div>
