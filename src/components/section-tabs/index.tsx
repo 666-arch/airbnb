@@ -9,7 +9,6 @@ const SectionTabs: React.FC<IProps> = memo(({ tabNames, tabClick }) => {
     setCurrentIndex(index);
     tabClick(index, name);
   };
-  console.log('Tab组件被渲染了--------------------')
   return (
     <div className="tab-names flex gap-8px">
       {tabNames?.map((name, index) => (
