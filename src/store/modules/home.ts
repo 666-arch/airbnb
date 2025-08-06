@@ -4,7 +4,7 @@ import { getHomeDiscountData, getHomeGoodHighScoreData, getHomeGoodPriceData } f
 interface HomeState {
     goodPriceInfo: IHomeRoomInfoList;
     goodHighScoreInfo: IHomeRoomInfoList;
-    goodDiscountInfo: any
+    goodDiscountInfo: any;
 }
 const initialState: HomeState = {
     goodPriceInfo: {
