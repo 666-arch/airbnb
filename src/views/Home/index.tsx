@@ -32,7 +32,9 @@ const Home = memo(() => {
     <div className="home-page-wrapper flex flex-col flex-items-center">
       <HomeBanner />
       <div className="w-1032px flex flex-col">
-        { Object.keys(_goodDiscountInfo.dest_list).length && <HomeDiscount _goodDiscountInfo={_goodDiscountInfo} /> } 
+        {Object.keys(_goodDiscountInfo.dest_list).length && (
+          <HomeDiscount _goodDiscountInfo={_goodDiscountInfo} />
+        )}
         <HomePrice _goodPriceInfo={_goodPriceInfo} />
         <HomeHighScore _goodHighScoreInfo={_goodHighScoreInfo} />
       </div>
