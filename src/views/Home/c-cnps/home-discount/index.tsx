@@ -7,7 +7,8 @@ interface IProps {
 }
 const HomeDiscount: React.FC<IProps> = memo(({ _goodDiscountInfo }) => {
   const _tabNames = _goodDiscountInfo.dest_address?.map((item) => item?.name);
-  const [tabName, setTabName] = useState<string>("佛山");
+  const initTabName = Object.keys(_goodDiscountInfo.dest_list ?? {})[0] ?? "";
+  const [tabName, setTabName] = useState<string>(initTabName);
   const handleTabClick = useCallback((index: number, name: string) => {
     setTabName(name);
   }, []);

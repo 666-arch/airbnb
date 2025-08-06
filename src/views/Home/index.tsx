@@ -1,11 +1,11 @@
 import { memo, useEffect } from "react";
 import { Action } from "@reduxjs/toolkit";
 import HomeBanner from "./c-cnps/home-banner";
+import HomePrice from "./c-cnps/home-price";
+import HomeDiscount from "./c-cnps/home-discount";
+import HomeHighScore from "./c-cnps/home-highScore";
 import { fetchHomeDataAction } from "@/store/modules/home";
 import { shallowEqual, useDispatch, useSelector } from "react-redux";
-import HomeDiscount from "./c-cnps/home-discount";
-import HomePrice from "./c-cnps/home-price";
-import HomeHighScore from "./c-cnps/home-highScore";
 const Home = memo(() => {
   const { goodPriceInfo, goodHighScoreInfo, goodDiscountInfo } = useSelector(
     (state: {
@@ -32,7 +32,7 @@ const Home = memo(() => {
     <div className="home-page-wrapper flex flex-col flex-items-center">
       <HomeBanner />
       <div className="w-1032px flex flex-col">
-        <HomeDiscount _goodDiscountInfo={_goodDiscountInfo} />
+        { Object.keys(_goodDiscountInfo.dest_list).length && <HomeDiscount _goodDiscountInfo={_goodDiscountInfo} /> } 
         <HomePrice _goodPriceInfo={_goodPriceInfo} />
         <HomeHighScore _goodHighScoreInfo={_goodHighScoreInfo} />
       </div>
