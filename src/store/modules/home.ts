@@ -1,10 +1,11 @@
 //@reduxjs/rtk
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import { getHomeDiscountData, getHomeGoodHighScoreData, getHomeGoodPriceData } from "@/services/modules/home";
+import { getHomeDiscountData, getHomeGoodHighScoreData, getHomeGoodPriceData, getHomeHotRecommendData } from "@/services/modules/home";
 interface HomeState {
     goodPriceInfo: IHomeRoomInfoList;
     goodHighScoreInfo: IHomeRoomInfoList;
     goodDiscountInfo: any;
+    goodHotRecommendInfo: any;
 }
 const initialState: HomeState = {
     goodPriceInfo: {
@@ -18,6 +19,10 @@ const initialState: HomeState = {
     goodDiscountInfo: {
         title: "",
         dest_list: {}
+    },
+    goodHotRecommendInfo: {
+        title: "",
+        dest_list: {}
     }
 };
 export const fetchHomeDataAction = createAsyncThunk('fetchData', (payload, { dispatch }) => {
@@ -29,6 +34,9 @@ export const fetchHomeDataAction = createAsyncThunk('fetchData', (payload, { dis
     })
     getHomeDiscountData().then(res => {
         res.status === 200 && dispatch(changeGoodDiscountAction(res.data))
+    })
+    getHomeHotRecommendData().then(res => {
+        res.status === 200 && dispatch(changeGoodHotRecommendAction(res.data))
     })
 })
 
@@ -45,6 +53,9 @@ const homeSlice =
             },
             changeGoodDiscountAction(state, { payload }) {
                 state.goodDiscountInfo = payload
+            },
+            changeGoodHotRecommendAction(state, { payload }) {
+                state.goodHotRecommendInfo = payload
             }
         },
         // extraReducers: (builder) => {
@@ -54,6 +65,6 @@ const homeSlice =
         // }
     })
 
-export const { changeGoodPriceInfoAction, changeGoodHighScoreAction, changeGoodDiscountAction } = homeSlice.actions
+export const { changeGoodPriceInfoAction, changeGoodHighScoreAction, changeGoodDiscountAction, changeGoodHotRecommendAction } = homeSlice.actions
 
 export default homeSlice.reducer

@@ -37,8 +37,6 @@ const Home = memo(() => {
         )}
         <HomePrice _goodPriceInfo={_goodPriceInfo} />
         <HomeHighScore _goodHighScoreInfo={_goodHighScoreInfo} />
-
-        
       </div>
     </div>
   );
