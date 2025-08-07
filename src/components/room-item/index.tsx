@@ -14,7 +14,7 @@ const RoomItem: React.FC<IProps> = memo(
               className="pos-absolute left-0px top-0px w-100% h-100% b-rd-3px"
             />
           </div>
-          <div  
+          <div
             className="font-size-12px font-700 mt-10px mb-5px"
             style={{ color: verify_info?.text_color }}
           >
