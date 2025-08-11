@@ -1,3 +1,4 @@
+import SectionFooter from "@/components/section-footer";
 import SectionHeader from "@/components/section-header";
 import SectionRooms from "@/components/section-rooms";
 import React, { memo } from "react";
@@ -12,6 +13,8 @@ const HomePrice: React.FC<IProps> = memo(({ _goodPriceInfo }) => {
         subtitle={_goodPriceInfo?.subtitle}
       />
       <SectionRooms roomList={_goodPriceInfo.list} />
+      
+      <SectionFooter/>
     </div>
   );
 });

@@ -1,3 +1,4 @@
+import SectionFooter from "@/components/section-footer";
 import SectionHeader from "@/components/section-header";
 import SectionRooms from "@/components/section-rooms";
 import SectionTabs from "@/components/section-tabs";
