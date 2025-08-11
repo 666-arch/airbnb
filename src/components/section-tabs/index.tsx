@@ -13,7 +13,7 @@ const SectionTabs: React.FC<IProps> = memo(({ tabNames, tabClick }) => {
     <div className="tab-names flex gap e-8px">
       {tabNames?.map((name, index) => (
         <div
-          className="flex justify-center items-center py-10px px-20px cursor-pointer border-0.5px border-solid border-rd-5px"
+          className="whitespace-pre flex justify-center items-center py-10px px-20px cursor-pointer border-0.5px border-solid border-rd-5px"
           key={name}
           onClick={() => handleClickItem(index, name)}
           style={
