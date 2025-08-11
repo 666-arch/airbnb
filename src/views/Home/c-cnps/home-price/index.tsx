@@ -13,8 +13,6 @@ const HomePrice: React.FC<IProps> = memo(({ _goodPriceInfo }) => {
         subtitle={_goodPriceInfo?.subtitle}
       />
       <SectionRooms roomList={_goodPriceInfo.list} />
-      
-      <SectionFooter/>
     </div>
   );
 });

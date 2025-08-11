@@ -25,6 +25,7 @@ const HomeDiscount: React.FC<IProps> = memo(({ _goodDiscountInfo }) => {
         roomList={_goodDiscountInfo?.dest_list?.[tabName]}
         width={"33%"}
       />
+      <SectionFooter name={tabName}/>
     </div>
   );
 });
