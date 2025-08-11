@@ -19,7 +19,7 @@ const SectionTabs: React.FC<IProps> = memo(({ tabNames, tabClick }) => {
           style={
             currentIndex === index
               ? {
-                  backgroundColor: "#00848A",
+                  backgroundColor: "#00848A", 
                   borderColor: "#00848A",
                   color: "#FFF",
                 }

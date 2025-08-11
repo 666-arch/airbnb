@@ -7,6 +7,7 @@ import HomeHighScore from "./c-cnps/home-highScore";
 import { fetchHomeDataAction } from "@/store/modules/home";
 import { shallowEqual, useDispatch, useSelector } from "react-redux";
 import HomeHotRecommend from "./c-cnps/home-recommend";
+import { isEmptyOf } from "@/utils";
 const Home = memo(() => {
   const {
     goodPriceInfo,
@@ -42,10 +43,10 @@ const Home = memo(() => {
     <div className="home-page-wrapper flex flex-col flex-items-center">
       <HomeBanner />
       <div className="w-1032px flex flex-col">
-        {Object.keys(_goodDiscountInfo.dest_list).length && (
+        {isEmptyOf(_goodDiscountInfo.dest_list) && (
           <HomeDiscount _goodDiscountInfo={_goodDiscountInfo} />
         )}
-        {Object.keys(_goodHotRecommendInfo.dest_list).length && (
+        {isEmptyOf(_goodHotRecommendInfo.dest_list) && (
           <HomeHotRecommend _goodHotRecommendInfo={_goodHotRecommendInfo} />
         )}
         <HomePrice _goodPriceInfo={_goodPriceInfo} />

@@ -8,3 +8,9 @@ export const stylesStrToObject = (styleStr: string) => {
     }
     return obj;
 }
+
+export const isEmptyOf =
+    <T extends object>(obj: T | null | undefined): obj is T => {
+        if (obj === null) return false
+        return Object.keys(obj).length > 0;
+}
