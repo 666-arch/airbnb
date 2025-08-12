@@ -10,7 +10,7 @@ const SectionTabs: React.FC<IProps> = memo(({ tabNames, tabClick }) => {
     tabClick(index, name);
   };
   return (
-    <div className="tab-names flex gap e-8px">
+    <div className="tab-names flex gap-8px">
       {tabNames?.map((name, index) => (
         <div
           className="whitespace-pre flex justify-center items-center py-10px px-20px cursor-pointer border-0.5px border-solid border-rd-5px"
@@ -19,7 +19,7 @@ const SectionTabs: React.FC<IProps> = memo(({ tabNames, tabClick }) => {
           style={
             currentIndex === index
               ? {
-                  backgroundColor: "#00848A", 
+                  backgroundColor: "#00848A",
                   borderColor: "#00848A",
                   color: "#FFF",
                 }
