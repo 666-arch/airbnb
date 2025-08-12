@@ -7,11 +7,12 @@ const ScrollView: React.FC<IProps> = memo((props) => {
   const slotRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
     if (slotRef.current) {
-      const ctxOffsetWidth = slotRef.current.offsetWidth;
+      const ctxClientWidth = slotRef.current.clientWidth;
       const ctxScrollWidth = slotRef.current.scrollWidth; //可滚动距离
-      ctxScrollWidth > ctxOffsetWidth && setShowRightBtn(true);
+      const totalDistance = ctxScrollWidth - ctxClientWidth
+      totalDistance > 0 ? setShowRightBtn(true) : setShowRightBtn(false)
     }
-  }, []);
+  }, [props.children]);
   return (
     <div className="scroll-view-info">
       <button>左边按钮</button>
