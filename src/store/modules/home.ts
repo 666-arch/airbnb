@@ -1,11 +1,12 @@
 //@reduxjs/rtk
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import { getHomeDiscountData, getHomeGoodHighScoreData, getHomeGoodPriceData, getHomeHotRecommendData } from "@/services/modules/home";
+import { getHomeDiscountData, getHomeGoodHighScoreData, getHomeGoodLongForData, getHomeGoodPriceData, getHomeHotRecommendData } from "@/services/modules/home";
 interface HomeState {
     goodPriceInfo: IHomeRoomInfoList;
     goodHighScoreInfo: IHomeRoomInfoList;
     goodDiscountInfo: any;
     goodHotRecommendInfo: any;
+    goodLongForInfo: IHomeRoomInfoList;
 }
 const initialState: HomeState = {
     goodPriceInfo: {
@@ -23,6 +24,10 @@ const initialState: HomeState = {
     goodHotRecommendInfo: {
         title: "",
         dest_list: {}
+    },
+    goodLongForInfo: {
+        title: "",
+        list: []
     }
 };
 export const fetchHomeDataAction = createAsyncThunk('fetchData', (payload, { dispatch }) => {
@@ -37,6 +42,9 @@ export const fetchHomeDataAction = createAsyncThunk('fetchData', (payload, { dis
     })
     getHomeHotRecommendData().then(res => {
         res.status === 200 && dispatch(changeGoodHotRecommendAction(res.data))
+    })
+    getHomeGoodLongForData().then(res => {
+        res.status === 200 && dispatch(changeGoodLongForAction(res.data))
     })
 })
 
@@ -56,6 +64,9 @@ const homeSlice =
             },
             changeGoodHotRecommendAction(state, { payload }) {
                 state.goodHotRecommendInfo = payload
+            },
+            changeGoodLongForAction(state, { payload }) {
+                state.goodLongForInfo = payload
             }
         },
         // extraReducers: (builder) => {
@@ -65,6 +76,6 @@ const homeSlice =
         // }
     })
 
-export const { changeGoodPriceInfoAction, changeGoodHighScoreAction, changeGoodDiscountAction, changeGoodHotRecommendAction } = homeSlice.actions
+export const { changeGoodPriceInfoAction, changeGoodHighScoreAction, changeGoodDiscountAction, changeGoodHotRecommendAction, changeGoodLongForAction } = homeSlice.actions
 
 export default homeSlice.reducer
