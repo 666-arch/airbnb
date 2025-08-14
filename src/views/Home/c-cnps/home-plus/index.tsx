@@ -1,5 +1,6 @@
 import ScrollView from "@/base-ui/scroll-view";
 import RoomItem from "@/components/room-item";
+import SectionFooter from "@/components/section-footer";
 import SectionHeader from "@/components/section-header";
 import React, { memo } from "react";
 interface IProps {
@@ -19,10 +20,11 @@ const HomePlus: React.FC<IProps> = memo(({ _goodPlusInfo }) => {
             name={item.name}
             picture_url={item.picture_url}
             price_format={item.price_format}
-            width={'20%'}
+            width={"20%"}
           />
         ))}
       </ScrollView>
+      <SectionFooter name="Plus"/>
     </div>
   );
 });

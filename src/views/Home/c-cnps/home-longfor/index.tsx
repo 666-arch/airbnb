@@ -12,7 +12,7 @@ const HomeLongFor: React.FC<IProps> = memo(({ _goodLongFor }) => {
         title={_goodLongFor.title}
         subtitle={_goodLongFor.subtitle}
       />
-      <ScrollView>
+      <ScrollView> 
         {_goodLongFor.list.map((item) => (
           <LongForItem
             picture_url={item.picture_url}
