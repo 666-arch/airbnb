@@ -1,3 +1,4 @@
+import ScrollView from "@/base-ui/scroll-view";
 import LongForItem from "@/components/longfor-item";
 import SectionHeader from "@/components/section-header";
 import React, { memo } from "react";
@@ -11,11 +12,13 @@ const HomeLongFor: React.FC<IProps> = memo(({ _goodLongFor }) => {
         title={_goodLongFor.title}
         subtitle={_goodLongFor.subtitle}
       />
-      <div className="flex">
-        {_goodLongFor.list.map((item) => (
-          <LongForItem itemData={item} />
-        ))}
-      </div>
+      <ScrollView>
+        <div className="flex gap-16px">
+          {_goodLongFor.list.map((item) => (
+            <LongForItem itemData={item} />
+          ))}
+        </div>
+      </ScrollView>
     </div>
   );
 });
