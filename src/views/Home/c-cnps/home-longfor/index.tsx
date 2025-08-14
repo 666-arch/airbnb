@@ -13,11 +13,13 @@ const HomeLongFor: React.FC<IProps> = memo(({ _goodLongFor }) => {
         subtitle={_goodLongFor.subtitle}
       />
       <ScrollView>
-        <div className="flex gap-16px">
-          {_goodLongFor.list.map((item) => (
-            <LongForItem itemData={item} />
-          ))}
-        </div>
+        {_goodLongFor.list.map((item) => (
+          <LongForItem
+            picture_url={item.picture_url}
+            city={item.city}
+            price={item.price}
+          />
+        ))}
       </ScrollView>
     </div>
   );

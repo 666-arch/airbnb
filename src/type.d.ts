@@ -9,7 +9,7 @@ declare interface ResponseMessage {
 }
 
 declare type RoomListType = {
-    name: string;
+    name?: string;
     picture_url?: string;
     price?: number;
     price_format?: string;
