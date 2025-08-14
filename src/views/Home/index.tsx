@@ -14,6 +14,7 @@ const Home = memo(() => {
     goodHighScoreInfo,
     goodDiscountInfo,
     goodHotRecommendInfo,
+    goodLongForInfo,
   } = useSelector(
     (state: {
       home: {
@@ -21,12 +22,14 @@ const Home = memo(() => {
         goodHighScoreInfo: IHomeRoomInfoList;
         goodDiscountInfo: IHomeDiscountInfoList;
         goodHotRecommendInfo: IHomeDiscountInfoList;
+        goodLongForInfo: IHomeRoomInfoList;
       };
     }) => ({
       goodPriceInfo: state.home.goodPriceInfo,
       goodHighScoreInfo: state.home.goodHighScoreInfo,
       goodDiscountInfo: state.home.goodDiscountInfo,
       goodHotRecommendInfo: state.home.goodHotRecommendInfo,
+      goodLongForInfo: state.home.goodLongForInfo,
     }),
     shallowEqual
   );
@@ -34,6 +37,9 @@ const Home = memo(() => {
   const _goodHighScoreInfo: IHomeRoomInfoList = goodHighScoreInfo;
   const _goodDiscountInfo: IHomeDiscountInfoList = goodDiscountInfo;
   const _goodHotRecommendInfo: IHomeDiscountInfoList = goodHotRecommendInfo;
+  const _goodLongForInfo: IHomeRoomInfoList = goodLongForInfo;
+
+  console.log(_goodLongForInfo);
 
   const dispatch = useDispatch();
   useEffect(() => {
@@ -49,8 +55,12 @@ const Home = memo(() => {
         {isEmptyOf(_goodHotRecommendInfo.dest_list) && (
           <HomeHotRecommend _goodHotRecommendInfo={_goodHotRecommendInfo} />
         )}
-        <HomePrice _goodPriceInfo={_goodPriceInfo} />
-        <HomeHighScore _goodHighScoreInfo={_goodHighScoreInfo} />
+        {isEmptyOf(_goodPriceInfo) && (
+          <HomePrice _goodPriceInfo={_goodPriceInfo} />
+        )}
+        {isEmptyOf(_goodHighScoreInfo) && (
+          <HomeHighScore _goodHighScoreInfo={_goodHighScoreInfo} />
+        )}
       </div>
     </div>
   );
