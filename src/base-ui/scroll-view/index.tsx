@@ -8,7 +8,7 @@ const ScrollView: React.FC<IProps> = memo((props) => {
   const [showRightBtn, setShowRightBtn] = useState<boolean>(false);
   const [showLeftBtn, setShowLeftBtn] = useState<boolean>(false);
   const [tabIndex, setTabIndex] = useState<number>(0);
-  const tabIndexRef = useRef<number>(0);
+//   const tabIndexRef = useRef<number>(0);
   const totalDistanceRef = useRef<number>(0);
   const slotRef = useRef<HTMLDivElement>(null);
   useEffect(() => {

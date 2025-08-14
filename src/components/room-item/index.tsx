@@ -6,7 +6,7 @@ interface IProps extends RoomListType {
 const RoomItem: React.FC<IProps> = memo(
   ({ width, name, picture_url, verify_info, price_format, star_rating }) => {
     return (
-      <div className="p-8px" style={{ width: width ?? "25%" }}>
+      <div className="p-8px flex-shrink-0" style={{ width: width ?? "25%" }}>
         <div className="inner flex flex-col cursor-pointer">
           <div className="pos-relative overflow-hidden pt-66% pr-8px pl-8px pb-0">
             <img

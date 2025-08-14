@@ -9,6 +9,7 @@ import { shallowEqual, useDispatch, useSelector } from "react-redux";
 import HomeHotRecommend from "./c-cnps/home-recommend";
 import { isEmptyOf } from "@/utils";
 import HomeLongFor from "./c-cnps/home-longfor";
+import HomePlus from "./c-cnps/home-plus";
 const Home = memo(() => {
   const {
     goodPriceInfo,
@@ -33,7 +34,7 @@ const Home = memo(() => {
       goodDiscountInfo: state.home.goodDiscountInfo,
       goodHotRecommendInfo: state.home.goodHotRecommendInfo,
       goodLongForInfo: state.home.goodLongForInfo,
-      goodPlusInfo: state.home.goodPlusInfo
+      goodPlusInfo: state.home.goodPlusInfo,
     }),
     shallowEqual
   );
@@ -52,8 +53,6 @@ const Home = memo(() => {
     <div className="home-page-wrapper flex flex-col flex-items-center">
       <HomeBanner />
       <div className="w-1032px flex flex-col">
-        
-
         {isEmptyOf(_goodDiscountInfo.dest_list) && (
           <HomeDiscount _goodDiscountInfo={_goodDiscountInfo} />
         )}
@@ -73,7 +72,8 @@ const Home = memo(() => {
         {isEmptyOf(_goodHighScoreInfo) && (
           <HomeHighScore _goodHighScoreInfo={_goodHighScoreInfo} />
         )}
-        
+
+        {isEmptyOf(goodPlusInfo) && <HomePlus _goodPlusInfo={goodPlusInfo}/>}
       </div>
     </div>
   );
