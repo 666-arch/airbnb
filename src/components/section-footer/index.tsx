@@ -8,10 +8,13 @@ interface IProps {
 const SectionFooter: React.FC<IProps> = memo(({ name, color = "#000" }) => {
   const navigate = useNavigate();
   const handleMoreClick = () => {
-    navigate('/entire')
-  }
+    navigate("/entire");
+  };
   return (
-    <div className="section-footer-info flex items-center gap-5px font-size-17px font-700" onClick={handleMoreClick}>
+    <div
+      className="section-footer-info flex items-center gap-5px font-size-17px font-700"
+      onClick={handleMoreClick}
+    >
       <span className="cursor-pointer" style={{ color }}>
         {name ? `显示${name}更多房源` : "查看全部"}
       </span>
