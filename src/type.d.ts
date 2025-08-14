@@ -19,6 +19,7 @@ declare type RoomListType = {
         messages: Array<string>
         text_color?: string;
     }
+    city?: string;
 }
 declare interface IHomeRoomInfoList {
     title: string;

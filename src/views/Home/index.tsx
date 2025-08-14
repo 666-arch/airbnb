@@ -40,8 +40,6 @@ const Home = memo(() => {
   const _goodHotRecommendInfo: IHomeDiscountInfoList = goodHotRecommendInfo;
   const _goodLongForInfo: IHomeRoomInfoList = goodLongForInfo;
 
-  console.log(_goodLongForInfo);
-
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchHomeDataAction() as unknown as Action);
@@ -60,7 +58,7 @@ const Home = memo(() => {
         {isEmptyOf(_goodPriceInfo) && (
           <HomePrice _goodPriceInfo={_goodPriceInfo} />
         )}
-        
+
         {isEmptyOf(_goodLongForInfo) && (
           <HomeLongFor _goodLongFor={goodLongForInfo} />
         )}
