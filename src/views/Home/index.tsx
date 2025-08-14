@@ -8,6 +8,7 @@ import { fetchHomeDataAction } from "@/store/modules/home";
 import { shallowEqual, useDispatch, useSelector } from "react-redux";
 import HomeHotRecommend from "./c-cnps/home-recommend";
 import { isEmptyOf } from "@/utils";
+import HomeLongFor from "./c-cnps/home-longfor";
 const Home = memo(() => {
   const {
     goodPriceInfo,
@@ -55,9 +56,15 @@ const Home = memo(() => {
         {isEmptyOf(_goodHotRecommendInfo.dest_list) && (
           <HomeHotRecommend _goodHotRecommendInfo={_goodHotRecommendInfo} />
         )}
+
         {isEmptyOf(_goodPriceInfo) && (
           <HomePrice _goodPriceInfo={_goodPriceInfo} />
         )}
+        
+        {isEmptyOf(_goodLongForInfo) && (
+          <HomeLongFor _goodLongFor={goodLongForInfo} />
+        )}
+
         {isEmptyOf(_goodHighScoreInfo) && (
           <HomeHighScore _goodHighScoreInfo={_goodHighScoreInfo} />
         )}
