@@ -1,12 +1,13 @@
 //@reduxjs/rtk
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import { getHomeDiscountData, getHomeGoodHighScoreData, getHomeGoodLongForData, getHomeGoodPriceData, getHomeHotRecommendData } from "@/services/modules/home";
+import { getHomeDiscountData, getHomeGoodHighScoreData, getHomeGoodLongForData, getHomeGoodPriceData, getHomeHotRecommendData, getHomePlusData } from "@/services/modules/home";
 interface HomeState {
     goodPriceInfo: IHomeRoomInfoList;
     goodHighScoreInfo: IHomeRoomInfoList;
     goodDiscountInfo: any;
     goodHotRecommendInfo: any;
     goodLongForInfo: IHomeRoomInfoList;
+    goodPlusInfo: IHomeRoomInfoList;
 }
 const initialState: HomeState = {
     goodPriceInfo: {
@@ -28,6 +29,10 @@ const initialState: HomeState = {
     goodLongForInfo: {
         title: "",
         list: []
+    },
+    goodPlusInfo: {
+        title: "",
+        list: []
     }
 };
 export const fetchHomeDataAction = createAsyncThunk('fetchData', (payload, { dispatch }) => {
@@ -45,6 +50,9 @@ export const fetchHomeDataAction = createAsyncThunk('fetchData', (payload, { dis
     })
     getHomeGoodLongForData().then(res => {
         res.status === 200 && dispatch(changeGoodLongForAction(res.data))
+    })
+    getHomePlusData().then(res => {
+        res.status === 200 && dispatch(changeGoodPlusAction(res.data))
     })
 })
 
@@ -67,6 +75,9 @@ const homeSlice =
             },
             changeGoodLongForAction(state, { payload }) {
                 state.goodLongForInfo = payload
+            },
+            changeGoodPlusAction(state, { payload }) {
+                state.goodPlusInfo = payload
             }
         },
         // extraReducers: (builder) => {
@@ -76,6 +87,6 @@ const homeSlice =
         // }
     })
 
-export const { changeGoodPriceInfoAction, changeGoodHighScoreAction, changeGoodDiscountAction, changeGoodHotRecommendAction, changeGoodLongForAction } = homeSlice.actions
+export const { changeGoodPriceInfoAction, changeGoodHighScoreAction, changeGoodDiscountAction, changeGoodHotRecommendAction, changeGoodLongForAction, changeGoodPlusAction } = homeSlice.actions
 
 export default homeSlice.reducer

@@ -28,3 +28,9 @@ export const getHomeGoodLongForData = () => {
         url: "/home/longfor"
     })
 }
+
+export const getHomePlusData = () => {
+    return apiRequest.get({
+        url: "/home/plus"
+    })
+}
