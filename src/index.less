@@ -1,34 +1,48 @@
 * {
     box-sizing: border-box;
 }
+
 body {
     padding: 0;
     margin: 0;
     font-family: "Circular", "PingFang-SC", "Hiragino Sans GB", "微软雅黑";
 }
-:root{
+
+:root {
     --primart-color: #FF385C
 }
-.shadow-box{
+
+.shadow-box {
     transition: box-shadow 500ms ease;
-    &:hover{
+
+    &:hover {
         box-shadow: 0 2px 4px rgb(0, 0, 0, 0.8);
     }
 }
-.pointer-box{
+
+.pointer-box {
     cursor: pointer;
 }
-.ant-rate{
-    .ant-rate-star{
+
+.ant-rate {
+    .ant-rate-star {
         margin-inline-end: 3px !important;
-        span{
+
+        span {
             width: 12px;
             height: 12px;
         }
     }
 }
+
 .scroll-view-info {
-    .slot{
+    .slot {
         transition: transform 300ms ease;
+    }
+}
+
+.entire-filter-wrapper {
+    .btn-active {
+        background-color: gray;
     }
 }
