@@ -14,7 +14,7 @@ const EntireFilter = memo(({}) => {
     setSelFilterName(newSelFilterName);
   };
   return (
-    <div className="entire-filter-wrapper flex gap-10px">
+    <div className="entire-filter-wrapper flex gap-10px py-10px px-28px">
       {filterData.map((item) => (
         <div
           key={item}

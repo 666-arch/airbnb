@@ -9,7 +9,7 @@ const EntireRooms = memo(({}) => {
     })
   );
   return (
-    <div className="entire-rooms-info flex flex-wrap">
+    <div className="entire-rooms-info flex flex-wrap px-20px">
       {roomList.length > 0 &&
         roomList.map((item) => (
           <RoomItem
