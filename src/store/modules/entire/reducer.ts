@@ -1,6 +1,6 @@
 import * as actionTypes from './constants'
 const initalState = {
-    currentPage: 2,
+    currentPage: 0,
     totalCount: 0,
     roomList: []
 }
