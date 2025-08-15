@@ -73,7 +73,7 @@ const Home = memo(() => {
           <HomeHighScore _goodHighScoreInfo={_goodHighScoreInfo} />
         )}
 
-        {isEmptyOf(goodPlusInfo) && <HomePlus _goodPlusInfo={goodPlusInfo}/>}
+        {isEmptyOf(goodPlusInfo) && <HomePlus _goodPlusInfo={goodPlusInfo} />}
       </div>
     </div>
   );

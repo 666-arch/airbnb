@@ -6,7 +6,6 @@ const routes: RouteObject[] = ([
             const { default: Component } = await import("@/views/Home")
             return { Component }
         }
-        // element: React.createElement(Home)
     },
     {
         path: "/home",
