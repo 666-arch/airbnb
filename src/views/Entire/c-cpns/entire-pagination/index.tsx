@@ -1,6 +1,6 @@
 import React, { memo } from "react";
 import { Pagination } from "antd";
-import { useDispatch, useSelector } from "react-redux";
+import { shallowEqual, useDispatch, useSelector } from "react-redux";
 import { fetchRoomListAction } from "@/store/modules/entire/actionCreators";
 import { Action } from "@reduxjs/toolkit";
 const EntirePagintion = memo(({}) => {
@@ -16,7 +16,7 @@ const EntirePagintion = memo(({}) => {
       roomList: state.entire.roomList,
       totalCount: state.entire.totalCount,
     })
-  );
+  ,shallowEqual);
   const startCount = currentPage * 20 + 1;
   const endCount = (currentPage + 1) * 20;
   const dispatch = useDispatch();

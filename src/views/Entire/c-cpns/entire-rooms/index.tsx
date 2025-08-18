@@ -1,15 +1,21 @@
 import RoomItem from "@/components/room-item";
 import React, { memo } from "react";
-import { useSelector } from "react-redux";
+import { shallowEqual, useSelector } from "react-redux";
 
 const EntireRooms = memo(({}) => {
   const { roomList, totalCount, isLoading } = useSelector(
-    (state: { entire: { roomList: RoomListType[], totalCount: number, isLoading: boolean } }) => ({
+    (state: {
+      entire: {
+        roomList: RoomListType[];
+        totalCount: number;
+        isLoading: boolean;
+      };
+    }) => ({
       roomList: state.entire.roomList,
       totalCount: state.entire.totalCount,
-      isLoading: state.entire.isLoading
+      isLoading: state.entire.isLoading,
     })
-  );
+  ,shallowEqual);
 
   return (
     <div className="entire-rooms-info flex flex-col flex-wrap">
