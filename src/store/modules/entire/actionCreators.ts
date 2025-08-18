@@ -1,7 +1,7 @@
 import { getEntireRoomList } from '@/services/modules/entire'
 import * as actionTypes from './constants'
 
-export const changeCurrentPageAction = (currentPage) => ({
+export const changeCurrentPageAction = (currentPage: number) => ({
     type: actionTypes.CHANGE_CURRENT_PAGE,
     currentPage
 })

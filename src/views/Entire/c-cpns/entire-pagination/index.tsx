@@ -1,8 +1,10 @@
 import React, { memo } from "react";
 import { Pagination } from "antd";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { changeCurrentPageAction, fetchRoomListAction } from "@/store/modules/entire/actionCreators";
+import { Action } from "@reduxjs/toolkit";
 const EntirePagintion = memo(({}) => {
-  const { currentPage, roomList, totalCount } = useSelector(
+  const { currentPage, totalCount } = useSelector(
     (state: {
       entire: {
         currentPage: number;
@@ -17,9 +19,15 @@ const EntirePagintion = memo(({}) => {
   );
   const startCount = currentPage * 20 + 1;
   const endCount = (currentPage + 1) * 20;
+  const dispatch = useDispatch();
+  const changePage = (pagesize: number) => {
+    //更新页码
+    dispatch(changeCurrentPageAction(pagesize - 1));
+    dispatch(fetchRoomListAction() as unknown as Action)
+  };
   return (
     <div className="flex flex-col items-center gap-10px">
-      <Pagination defaultCurrent={1} total={totalCount} />
+      <Pagination defaultCurrent={1} total={totalCount} onChange={changePage} />
       <div>
         第 {startCount} - {endCount} 个房源，共超过 300 间
       </div>
