@@ -3,12 +3,14 @@ import React, { memo } from "react";
 import { useSelector } from "react-redux";
 
 const EntireRooms = memo(({}) => {
-  const { roomList, totalCount } = useSelector(
-    (state: { entire: { roomList: RoomListType[], totalCount: number } }) => ({
+  const { roomList, totalCount, isLoading } = useSelector(
+    (state: { entire: { roomList: RoomListType[], totalCount: number, isLoading: boolean } }) => ({
       roomList: state.entire.roomList,
-      totalCount: state.entire.totalCount
+      totalCount: state.entire.totalCount,
+      isLoading: state.entire.isLoading
     })
   );
+
   return (
     <div className="entire-rooms-info flex flex-col flex-wrap">
       <div className="px-28px font-700 mt-10px">共{totalCount}多处住所</div>
@@ -27,6 +29,8 @@ const EntireRooms = memo(({}) => {
           ))}
         </div>
       )}
+
+      {isLoading && <div className="room-cover"></div>}
     </div>
   );
 });

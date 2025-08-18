@@ -2,7 +2,8 @@ import * as actionTypes from './constants'
 const initalState = {
     currentPage: 0,
     totalCount: 0,
-    roomList: []
+    roomList: [],
+    isLoading: false
 }
 const reducer =
     (state = initalState, action: { type: string }) => {
@@ -11,9 +12,10 @@ const reducer =
                 return { ...state, currentPage: action.currentPage }
             case actionTypes.CHANGE_ROOM_LIST:
                 return { ...state, roomList: action.roomList }
-
             case actionTypes.CHANGE_TOTAL_COUNT:
                 return { ...state, totalCount: action.totalCount }
+            case actionTypes.CHANGE_IS_LOADING:
+                return { ...state, isLoading: action.isLoading}
             default:
                 return state;
         }

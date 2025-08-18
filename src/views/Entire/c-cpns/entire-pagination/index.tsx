@@ -1,7 +1,7 @@
 import React, { memo } from "react";
 import { Pagination } from "antd";
 import { useDispatch, useSelector } from "react-redux";
-import { changeCurrentPageAction, fetchRoomListAction } from "@/store/modules/entire/actionCreators";
+import { fetchRoomListAction } from "@/store/modules/entire/actionCreators";
 import { Action } from "@reduxjs/toolkit";
 const EntirePagintion = memo(({}) => {
   const { currentPage, totalCount } = useSelector(
@@ -22,6 +22,7 @@ const EntirePagintion = memo(({}) => {
   const dispatch = useDispatch();
   const changePage = (pagesize: number) => {
     //更新页码
+    window.scrollTo(0, 0)
     // dispatch(changeCurrentPageAction(pagesize - 1));
     dispatch(fetchRoomListAction(pagesize - 1) as unknown as Action)
   };
