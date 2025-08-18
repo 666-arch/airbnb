@@ -12,6 +12,7 @@ declare type RoomListType = {
     id?: string;
     name?: string;
     picture_url?: string;
+    picture_urls?: Array<string>;
     price?: number;
     price_format?: string;
     reviews_count?: number;
