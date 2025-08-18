@@ -22,8 +22,8 @@ const EntirePagintion = memo(({}) => {
   const dispatch = useDispatch();
   const changePage = (pagesize: number) => {
     //更新页码
-    dispatch(changeCurrentPageAction(pagesize - 1));
-    dispatch(fetchRoomListAction() as unknown as Action)
+    // dispatch(changeCurrentPageAction(pagesize - 1));
+    dispatch(fetchRoomListAction(pagesize - 1) as unknown as Action)
   };
   return (
     <div className="flex flex-col items-center gap-10px">
