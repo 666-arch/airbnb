@@ -1,13 +1,13 @@
 import React, { memo } from "react";
 import { useSelector } from "react-redux";
+import DetailPictures from "./c-cpns/detail-pictures";
 
 const Detail = memo(({}) => {
-  const { detailInfo } = useSelector(
-    (state: { detail: { detailInfo: RoomListType } }) => ({
-      detailInfo: state.detail.detailInfo,
-    })
+  return (
+    <div>
+      <DetailPictures />
+    </div>
   );
-  return <div>{detailInfo.name}</div>;
 });
 
 export default Detail;
