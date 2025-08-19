@@ -1,8 +1,9 @@
 import RoomItem from "@/components/room-item";
 import React, { memo, useCallback } from "react";
-import { shallowEqual, useSelector } from "react-redux";
+import { shallowEqual, useDispatch, useSelector } from "react-redux";
 import { Rate, Carousel } from "antd";
 import { useNavigate } from "react-router-dom";
+import { changeDetailInfoAction } from "@/store/modules/detail";
 
 const contentStyle: React.CSSProperties = {
   margin: 0,
@@ -28,10 +29,12 @@ const EntireRooms = memo(({}) => {
     shallowEqual
   );
   const navigate = useNavigate()
-  const handleItemClick = useCallback(() => {
-    console.log('itemclick');
+  const dispatch = useDispatch()
+  const handleItemClick = useCallback((item: RoomListType) => {
+    // console.log('itemclick',item);
+    dispatch(changeDetailInfoAction(item))
     navigate("/detail")
-  },[navigate])
+  },[navigate, dispatch])
   return (
     <div className="entire-rooms-info flex flex-col">
       <div className="px-28px font-700 mt-10px">共{totalCount}多处住所</div>
@@ -40,12 +43,13 @@ const EntireRooms = memo(({}) => {
           {roomList.map((item) => (
             <RoomItem
               key={item.id}
-              name={item.name}
-              verify_info={item.verify_info}
-              price_format={item.price_format}
-              star_rating={item.reviews_count}
-              picture_url={item.picture_url}
-              picture_urls={item.picture_urls}
+              // name={item.name}
+              // verify_info={item.verify_info}
+              // price_format={item.price_format}
+              // star_rating={item.reviews_count}
+              // picture_url={item.picture_url}
+              // picture_urls={item.picture_urls}
+              itemData={item}
               width="20%"
               itemClick={handleItemClick}
             />
