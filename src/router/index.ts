@@ -21,5 +21,12 @@ const routes: RouteObject[] = ([
             return { Component }
         }
     },
+    {
+        path: "/detail",
+        async lazy() {
+            const { default: Component } = await import("@/views/Detail")
+            return { Component }
+        }
+    },
 ])
 export default routes

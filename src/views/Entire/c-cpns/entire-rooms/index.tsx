@@ -1,7 +1,8 @@
 import RoomItem from "@/components/room-item";
-import React, { memo } from "react";
+import React, { memo, useCallback } from "react";
 import { shallowEqual, useSelector } from "react-redux";
 import { Rate, Carousel } from "antd";
+import { useNavigate } from "react-router-dom";
 
 const contentStyle: React.CSSProperties = {
   margin: 0,
@@ -26,7 +27,11 @@ const EntireRooms = memo(({}) => {
     }),
     shallowEqual
   );
-
+  const navigate = useNavigate()
+  const handleItemClick = useCallback(() => {
+    console.log('itemclick');
+    navigate("/detail")
+  },[navigate])
   return (
     <div className="entire-rooms-info flex flex-col">
       <div className="px-28px font-700 mt-10px">共{totalCount}多处住所</div>
@@ -42,6 +47,7 @@ const EntireRooms = memo(({}) => {
               picture_url={item.picture_url}
               picture_urls={item.picture_urls}
               width="20%"
+              itemClick={handleItemClick}
             />
           ))}
         </div>

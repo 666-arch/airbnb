@@ -2,20 +2,21 @@ import React, { memo } from "react";
 import { Rate, Carousel } from "antd";
 interface IProps extends RoomListType {
   width?: React.CSSProperties["width"];
+  itemClick?: () => void
 }
 const RoomItem: React.FC<IProps> = memo(
   ({
     width,
     name,
     picture_url,
-    picture_urls,
-    verify_info,
+    picture_urls, 
+    verify_info,  
     price_format,
     star_rating,
+    itemClick
   }) => {
-    console.log("picture_urls", picture_urls);
     return (
-      <div className="p-8px" style={{ width: width ?? "25%" }}>
+      <div className="p-8px cursor-pointer" style={{ width: width ?? "25%" }} onClick={itemClick}>
         <Carousel>
           {!!picture_urls?.length ? (
             picture_urls?.map((item) => (
