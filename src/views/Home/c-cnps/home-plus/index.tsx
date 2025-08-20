@@ -17,9 +17,10 @@ const HomePlus: React.FC<IProps> = memo(({ _goodPlusInfo }) => {
         {_goodPlusInfo.list.map((item) => (
           <RoomItem
             key={item.id}
-            name={item.name}
-            picture_url={item.picture_url}
-            price_format={item.price_format}
+            // name={item.name}
+            // picture_url={item.picture_url}
+            // price_format={item.price_format}
+            itemData={item}
             width={"20%"}
           />
         ))}

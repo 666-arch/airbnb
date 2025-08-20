@@ -14,8 +14,8 @@ const RoomItem: React.FC<IProps> = memo(
     return (
       <div className="p-8px cursor-pointer" style={{ width: width ?? "25%" }} onClick={()=>itemClick(itemData)}>
         <Carousel>
-          {!!itemData.picture_urls?.length ? (
-            itemData.picture_urls?.map((item) => (
+          {!!itemData?.picture_urls?.length ? (
+            itemData?.picture_urls?.map((item) => (
               <div className="pos-relative overflow-hidden pt-66% pr-8px pl-8px pb-0">
                 <img
                   src={item}
