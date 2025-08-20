@@ -15,9 +15,9 @@ const EntireFilter = memo(({}) => {
   };
   return (
     <div className="entire-filter-wrapper flex gap-10px py-10px px-28px pos-fixed top-80px z-99">
-      {filterData.map((item) => (
+      {filterData.map((item, index) => (
         <div
-          key={item}
+          key={index}
           className={classNames(
             "py-10px px-15px border-1px border-gray border-solid rd-10px cursor-pointer",
             { "btn-active": selFilterName.includes(item) }

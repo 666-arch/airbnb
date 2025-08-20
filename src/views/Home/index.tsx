@@ -54,7 +54,7 @@ const Home = memo(() => {
   }, [dispatch]);
   return (
     <div className="home-page-wrapper flex flex-col flex-items-center">
-      <AppHeader/>
+      {/* <AppHeader/> */}
       <HomeBanner />
       <div className="w-1032px flex flex-col">
         {isEmptyOf(_goodDiscountInfo.dest_list) && (

@@ -4,6 +4,7 @@ import HeaderCenter from "./c-cnps/header-center";
 import HeaderRight from "./c-cnps/header-right";
 import { shallowEqual, useSelector } from "react-redux";
 import classNames from "classnames";
+import "./index.less";
 const AppHeader = memo(() => {
   const { headerConfig } = useSelector(
     (state: { main: { headerConfig: boolean } }) => ({
@@ -13,17 +14,17 @@ const AppHeader = memo(() => {
   );
   const { isFixed } = headerConfig;
   return (
-    <div
-      className={classNames(
-        "app-header flex flex-items-center h-80px border-b-1 border-b-solid border-b-#eee",
-        {
-          "fixedHeader": headerConfig,
-        }
-      )}
-    >
-      <HeaderLeft />
-      <HeaderCenter />
-      <HeaderRight />
+    <div className={`app-header ${isFixed ? "fixedHeader" : ""}`}>
+      <div className="header-content">
+        <div className="header-content-top">
+          <HeaderLeft />
+          <HeaderCenter />
+          <HeaderRight />
+        </div>
+        <div className="header-content-search"></div>
+      </div>
+
+      
     </div>
   );
 });

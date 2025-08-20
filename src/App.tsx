@@ -6,7 +6,7 @@ const router = createHashRouter(routes);
 const App = () => {
   return (
     <div className="app">
-      {/* <AppHeader/> */}
+      <AppHeader/>
       <div className="app-pages">
         <RouterProvider router={router} />
       </div>

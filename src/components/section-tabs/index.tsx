@@ -15,7 +15,7 @@ const SectionTabs: React.FC<IProps> = memo(({ tabNames, tabClick }) => {
       {tabNames?.map((name, index) => (
         <div
           className="whitespace-pre flex justify-center items-center py-10px px-60px cursor-pointer border-0.5px border-solid border-rd-5px"
-          key={name}
+          key={index}
           onClick={() => handleClickItem(index, name)}
           style={
             currentIndex === index

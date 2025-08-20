@@ -17,9 +17,9 @@ const SectionRooms: React.FC<IProps> = memo(({ width, roomList }) => {
   },[navigate, dispatch])
   return (
     <div className="flex flex-wrap mr--8px ml--8px">
-      {roomList?.slice(0, 8).map((item) => (
+      {roomList?.slice(0, 8).map((item, index) => (
         <RoomItem
-          key={item.id}
+          key={index}
           itemData={item}
           // name={item.name}
           // picture_url={item.picture_url}

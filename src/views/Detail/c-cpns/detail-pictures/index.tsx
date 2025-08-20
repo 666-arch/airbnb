@@ -17,8 +17,8 @@ const DetailPictures = memo(({}) => {
         </div>
       </div>
       <div className="right">
-        {data?.picture_urls?.slice(1, 5).map((item) => (
-          <div className="item" key={item}>
+        {data?.picture_urls?.slice(1, 5).map((item, index) => (
+          <div className="item" key={index}>
             <img src={item} />
             <div className="cover"></div>
           </div>

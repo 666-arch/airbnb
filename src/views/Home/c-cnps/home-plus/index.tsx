@@ -24,9 +24,9 @@ const HomePlus: React.FC<IProps> = memo(({ _goodPlusInfo }) => {
         subtitle={_goodPlusInfo.subtitle}
       />
       <ScrollView>
-        {_goodPlusInfo.list.map((item) => (
+        {_goodPlusInfo.list.map((item, index) => (
           <RoomItem
-            key={item.id}
+            key={index}
             // name={item.name}
             // picture_url={item.picture_url}
             // price_format={item.price_format}

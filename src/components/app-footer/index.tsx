@@ -10,8 +10,8 @@ const AppFooter = memo(() => {
             <div className="flex flex-col gap-12px" key={item.name}>
               <div className="name">{item.name}</div>
               <div className="flex flex-col gap-5px">
-                {item.list.map((childItem) => {
-                  return <div key={childItem}>{childItem}</div>;
+                {item.list.map((childItem, index) => {
+                  return <div key={index}>{childItem}</div>;
                 })}
               </div>
             </div>
