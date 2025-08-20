@@ -8,7 +8,7 @@ const LongForItem: React.FC<IProps> = memo(({ picture_url, city, price }) => {
       <img src={picture_url} className="w-200px" />
       <div
         className="w-200px h-246px pos-absolute top-0px"
-        style={{ backgroundColor: "#000", zIndex: 1, opacity: 0.2 }}
+        style={{ backgroundColor: "#000", zIndex: 1, opacity: 0.2 }} 
       ></div>
       <div className="w-200px pos-absolute bottom-25px flex flex-col items-center gap-5px z-2">
         <div>{city}</div>
