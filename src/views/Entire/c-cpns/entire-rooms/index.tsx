@@ -36,7 +36,7 @@ const EntireRooms = memo(({}) => {
     navigate("/detail")
   },[navigate, dispatch])
   return (
-    <div className="entire-rooms-info flex flex-col">
+    <div className="entire-rooms-info flex flex-col mt-128px">
       <div className="px-28px font-700 mt-10px">共{totalCount}多处住所</div>
       {roomList.length > 0 && (
         <div className="flex flex-wrap px-20px py-20px font-size-22px">

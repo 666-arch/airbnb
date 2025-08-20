@@ -10,6 +10,8 @@ import HomeHotRecommend from "./c-cnps/home-recommend";
 import { isEmptyOf } from "@/utils";
 import HomeLongFor from "./c-cnps/home-longfor";
 import HomePlus from "./c-cnps/home-plus";
+import AppHeader from "@/components/app-header";
+import { changeHeaderConfigAction } from "@/store/modules/main";
 const Home = memo(() => {
   const {
     goodPriceInfo,
@@ -48,9 +50,11 @@ const Home = memo(() => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchHomeDataAction() as unknown as Action);
+    dispatch(changeHeaderConfigAction({isFixed: true}) as unknown as Action)
   }, [dispatch]);
   return (
     <div className="home-page-wrapper flex flex-col flex-items-center">
+      <AppHeader/>
       <HomeBanner />
       <div className="w-1032px flex flex-col">
         {isEmptyOf(_goodDiscountInfo.dest_list) && (
