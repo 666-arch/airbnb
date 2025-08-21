@@ -24,7 +24,7 @@ const AppHeader = memo(() => {
         <div className="header-content-search"></div>
       </div>
 
-      
+      {/* <div className="cover"></div> */}
     </div>
   );
 });
