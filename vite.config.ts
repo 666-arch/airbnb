@@ -2,13 +2,20 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import path from 'path'
 import UnoCSS from 'unocss/vite'
+import { presetAttributify, presetIcons } from 'unocss'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [
     react(),
-    UnoCSS()
+    UnoCSS({
+      presets: [
+        // presetUno(),
+        presetAttributify(),
+        presetIcons()
+      ]
+    })
   ],
-  css:{
+  css: {
     preprocessorOptions: {
       less: {
         // additionalData: `@import "${path.resolve(__dirname, 'src/styles/variables.less')}";`,
@@ -22,6 +29,12 @@ export default defineConfig({
     }
   },
   build: {
-    outDir: 'build'
+    outDir: 'build',
+    cssCodeSplit: true,
+    rollupOptions: {
+      output: {
+        manualChunks: undefined
+      }
+    }
   }
 })

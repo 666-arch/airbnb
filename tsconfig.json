@@ -21,6 +21,7 @@
     "moduleResolution": "bundler",
     "target": "ESNext",
     "types": ["vite/client"],
-    "allowImportingTsExtensions": false
+    "allowImportingTsExtensions": false,
+    "skipLibCheck": true
   }
 }
