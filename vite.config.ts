@@ -32,7 +32,7 @@ export default defineConfig({
     outDir: 'dist',
     cssCodeSplit: true,
     rollupOptions: {
-      input: './src/main.ts'
+      input: './index.html'
     }
   }
 })
