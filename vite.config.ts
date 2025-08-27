@@ -29,12 +29,10 @@ export default defineConfig({
     }
   },
   build: {
-    outDir: 'build',
+    outDir: 'dist',
     cssCodeSplit: true,
     rollupOptions: {
-      output: {
-        manualChunks: undefined
-      }
+      input: './src/main.ts'
     }
   }
 })
